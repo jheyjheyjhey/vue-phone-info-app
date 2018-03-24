@@ -1,22 +1,17 @@
 import Vue from 'vue'
+import App from './App.vue'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
-import Routes from './routes'
+import { routes } from './routes'
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
 
-const errorPage = { template: '<p>Page not found</p>' }
+const router = new VueRouter({
+  routes: routes
+})
 
 new Vue({
   el: '#app',
-  data: {
-    currentRoute: window.location.pathname
-  },
-  computed: {
-    ViewComponent() {
-      return Routes[this.currentRoute] || errorPage
-    }
-  },
-  render(h) { return h(this.ViewComponent) }
+  render: h => h(App)
 })
