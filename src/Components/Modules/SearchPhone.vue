@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import _ from 'lodash';
+
 export default {
     data () {
         return {
@@ -23,7 +25,7 @@ export default {
         }
     },
     methods: {
-        callHttpRequest () {
+        callHttpRequest: _.debounce(function (event) {
             let config = {
                 params: {
                     token: this.token,
@@ -36,7 +38,7 @@ export default {
             }, response => {
                 console.log(response);
             });
-        }
+        }, 500)
     }
 }
 </script>
