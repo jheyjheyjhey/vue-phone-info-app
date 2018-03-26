@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import Navigation from './Layout/Navigation';
-import Hero from './Layout/Hero';
-import Footer from './Layout/Footer';
+import Navigation from './Layout/Navigation.vue';
+import Hero from './Layout/Hero.vue';
+import Footer from './Layout/Footer.vue';
 
 export default {
     components: {

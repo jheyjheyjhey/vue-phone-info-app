@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import SearchPhone from '../Modules/SearchPhone';
+import SearchPhone from '../Modules/SearchPhone.vue';
 
 export default {
     components: {
